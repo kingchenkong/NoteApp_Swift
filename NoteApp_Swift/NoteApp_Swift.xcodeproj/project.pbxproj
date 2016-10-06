@@ -13,6 +13,7 @@
 		877A9EAB1D9E13B100EF6EE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877A9EA91D9E13B100EF6EE6 /* LaunchScreen.storyboard */; };
 		877A9EB31D9E149D00EF6EE6 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A9EB21D9E149D00EF6EE6 /* NoteListViewController.swift */; };
 		877A9EB51D9E16BC00EF6EE6 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877A9EB41D9E16BC00EF6EE6 /* Note.swift */; };
+		87CA218F1DA63B2B00416E38 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CA218E1DA63B2B00416E38 /* NoteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		877A9EAC1D9E13B100EF6EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		877A9EB21D9E149D00EF6EE6 /* NoteListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		877A9EB41D9E16BC00EF6EE6 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		87CA218E1DA63B2B00416E38 /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +59,11 @@
 			isa = PBXGroup;
 			children = (
 				877A9EA01D9E13B100EF6EE6 /* AppDelegate.swift */,
-				877A9EA41D9E13B100EF6EE6 /* Main.storyboard */,
 				877A9EB21D9E149D00EF6EE6 /* NoteListViewController.swift */,
+				87CA218E1DA63B2B00416E38 /* NoteViewController.swift */,
 				877A9EB41D9E16BC00EF6EE6 /* Note.swift */,
 				877A9EA71D9E13B100EF6EE6 /* Assets.xcassets */,
+				877A9EA41D9E13B100EF6EE6 /* Main.storyboard */,
 				877A9EA91D9E13B100EF6EE6 /* LaunchScreen.storyboard */,
 				877A9EAC1D9E13B100EF6EE6 /* Info.plist */,
 			);
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CA218F1DA63B2B00416E38 /* NoteViewController.swift in Sources */,
 				877A9EA11D9E13B100EF6EE6 /* AppDelegate.swift in Sources */,
 				877A9EB31D9E149D00EF6EE6 /* NoteListViewController.swift in Sources */,
 				877A9EB51D9E16BC00EF6EE6 /* Note.swift in Sources */,
@@ -303,6 +307,7 @@
 				877A9EB11D9E13B100EF6EE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
