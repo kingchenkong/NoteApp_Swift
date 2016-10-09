@@ -38,7 +38,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="oi8-jF-xXA" kind="show" id="C9y-Ar-LEy"/>
+                                            <segue destination="oi8-jF-xXA" kind="show" identifier="toNoteViewController" id="C9y-Ar-LEy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

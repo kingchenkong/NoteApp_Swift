@@ -9,6 +9,19 @@
 import UIKit
 
 class NoteListViewController: UIViewController,UITableViewDataSource {
+    
+    // MARK: - viewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.dataSource = self
+        self.navigationItem.leftBarButtonItem = self.editButtonItem // editButton
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     // MARK: - Var
     var notes : [Note] = []
     
@@ -30,7 +43,6 @@ class NoteListViewController: UIViewController,UITableViewDataSource {
         //        self.tableView.insertRows(at: [indexPath as IndexPath], with: .automatic)
     }
     
-    
     // MARK: - initCoder
     required init?(coder aDecoder: NSCoder) {
         
@@ -43,15 +55,6 @@ class NoteListViewController: UIViewController,UITableViewDataSource {
         
         
         super.init(coder: aDecoder)
-    }
-    
-    
-    // MARK: - viewDidLoad
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.dataSource = self
-        self.navigationItem.leftBarButtonItem = self.editButtonItem // editButton
-        
     }
     
     // MARK: - reorder & Delete
@@ -71,10 +74,11 @@ class NoteListViewController: UIViewController,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath)
         let note = self.notes[indexPath.row]
         cell.textLabel?.text = note.text
+        cell.imageView?.image = note.image
         
         // for setEditing
         cell.showsReorderControl = true
-
+        
         return cell
     }
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
@@ -82,7 +86,7 @@ class NoteListViewController: UIViewController,UITableViewDataSource {
         // remove -> insert
         self.notes.remove(at: sourceIndexPath.row)
         self.notes.insert(note, at: destinationIndexPath.row)
-    
+        
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
@@ -91,8 +95,21 @@ class NoteListViewController: UIViewController,UITableViewDataSource {
         }
     }
     
-    // MARK: - didReceiveMemoryWarning
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNoteViewController"{
+            
+            let noteViewController = segue.destination as! NoteViewController
+            if  let indexPath = self.tableView.indexPathForSelectedRow {
+                let note = self.notes[indexPath.row]
+                noteViewController.note = note
+                
+            }
+        }
     }
+    
+    
 }
